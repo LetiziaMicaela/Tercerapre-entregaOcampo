@@ -1,0 +1,16 @@
+{% extends 'aplicacion/base.html' %}
+
+{% block titulo %}
+    Cat Hotel - Personal
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>Personal del Cat Hotel</h1>
+
+    <ul>
+        {% for persona in personal %}
+            <li>{{ persona.nombre }} - {{ persona.puesto }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'agregar_personal' %}" class="btn btn-primary">Agregar Personal</a>
+{% endblock contenido %}

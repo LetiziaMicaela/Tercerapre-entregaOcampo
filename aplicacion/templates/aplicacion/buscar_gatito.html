@@ -1,0 +1,23 @@
+<!-- buscar_gatito.html -->
+{% extends 'aplicacion/base.html' %}
+
+{% block titulo %}
+    Resultados de la Búsqueda
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>Resultados de la Búsqueda:</h1>
+
+    <form method="get">
+        {{ form }}
+        <input type="submit" value="Buscar">
+    </form>
+
+    <ul>
+        {% for gatito in gatitos %}
+            <li>{{ gatito.id }} {{ gatito.nombre }} {{ gatito.edad }} años - {{ gatito.raza }}</li>
+        {% empty %}
+            <li>No se encontraron gatitos con ese nombre.</li>
+        {% endfor %}
+    </ul>
+{% endblock contenido %}

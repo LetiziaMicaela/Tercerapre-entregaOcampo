@@ -1,0 +1,32 @@
+{% extends 'aplicacion/base.html' %}
+
+{% block titulo %}
+    Lista de Adoptantes
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>Lista de Adoptantes:</h1>
+
+    <ul>
+        {% for adoptante in adoptantes %}
+            <li>{{ adoptante.nombre }} - {{ adoptante.edad }} años - {{ adoptante.direccion }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'agregar_adoptante' %}" class="btn btn-primary">Agregar Adoptante</a>
+{% endblock contenido %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

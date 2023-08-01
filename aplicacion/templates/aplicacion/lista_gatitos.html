@@ -1,0 +1,22 @@
+{% extends 'aplicacion/base.html' %}
+
+{% block titulo %}
+    Gatitos Disponibles para Adopción
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>Gatitos Disponibles:</h1>
+
+    <ul>
+        {% for gato in gatos %}
+            <li>{{ gato.id }} {{ gato.nombre }} {{ gato.edad }} años - {{ gato.raza }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'agregar_gatito' %}" class="btn btn-primary">Agregar Gatito</a>
+    <a class="btn btn-primary" href="{% url 'buscar_gatito' %}">Buscar Gatitos</a>
+{% endblock contenido %}
+
+
+
+
+

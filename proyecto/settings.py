@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'proyecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'cursos.db',
+        'NAME': BASE_DIR / 'gatitos.db',
     }
 }
 

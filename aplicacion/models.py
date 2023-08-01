@@ -2,22 +2,26 @@ from django.db import models
 
 # Create your models here.
 # Create your models here.
-class Curso(models.Model):
-    nombre = models.CharField(max_length=50)
-    comision = models.IntegerField()
+class Gatito(models.Model):
+    nombre = models.CharField(max_length=100)
+    edad = models.IntegerField()
+    raza = models.CharField(max_length=100)
+    
+     
+    def __str__(self):
+        return self.nombre
 
-class Estudiante(models.Model):
-    nombre = models.CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
-    email = models.EmailField()
 
-class Profesor(models.Model):
+class Adoptante(models.Model):
     nombre = models.CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
-    email = models.EmailField()
-    profesion = models.CharField(max_length=50)
+    edad = models.CharField(max_length=50)
+    direccion = models.EmailField()
+    correo = models.CharField(max_length=50)
 
-class Entregable(models.Model):
-    nombre = models.CharField(max_length=50)
-    fechaEntrega = models.DateField()
-    entregado = models.BooleanField()  
+class Personal(models.Model):
+    nombre = models.CharField(max_length=100)
+    puesto = models.CharField(max_length=100)
+    horario = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nombre
